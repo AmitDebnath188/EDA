@@ -110,7 +110,7 @@ def _eda_clean_neurokit(eda_signal, sampling_rate=128):
 
     # Filtering
     filtered = signal_filter(
-        eda_signal, sampling_rate=sampling_rate, highcut=3, method="butterworth", order=4
+        eda_signal, sampling_rate=sampling_rate, highcut=61.5, method="butterworth", order=4
     )
 
     return filtered
@@ -138,5 +138,6 @@ def _eda_clean_biosppy(eda_signal, sampling_rate=128):
     clean = signal_smooth(
         filtered, method="convolution", kernel="boxzen", size=int(0.05 * sampling_rate)
     )
+
 
     return clean
